@@ -11,9 +11,8 @@ python -m venv venv
 source venv/bin/activate 
 
 * Need to install lib
-pip install streamlit pypdf2 langchain python-dotenv faiss-cpu openai
-pip install tiktoken
-pip install InstructorEmbedding sentence_transformers
+pip install streamlit  langchain python-dotenv  langchain-openai
+
 
 * create the config files
 touch .gitignore
