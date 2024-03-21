@@ -11,8 +11,8 @@ load_dotenv()
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-st.set_page_config(page_title="StreamBot", page_icon="🔗")
-st.title("StreamBot")
+st.set_page_config(page_title="AbdulChat", page_icon="🔥")
+st.title("AbdulChat")
 
 # coveration 
 
