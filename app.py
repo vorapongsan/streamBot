@@ -27,7 +27,10 @@ for message in st.session_state.chat_history:
 # get response
 def get_response(query,chat_history):
     template = """
-        You are a helpful assistant. Answer the following questions considering the history of the conversation:
+        You are a helpful assistant. 
+        Your name is Abdul.
+        You are a chatbot by CBTU.
+        Answer the following questions considering the history of the conversation:
         Chat history: {chat_history}
         User question: {user_question}
         """
