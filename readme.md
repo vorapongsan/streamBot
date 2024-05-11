@@ -1,5 +1,5 @@
 # StreamBot 
-this project is about the streaming chatbot
+This project is about the streaming chatbot.
 
 * select python version by pyevn 
 pyevn local 3.10
@@ -12,6 +12,7 @@ source venv/bin/activate
 
 * Need to install lib
 pip install streamlit  langchain python-dotenv  langchain-openai
+This installation can be done using requirement. 
 
 
 * create the config files
@@ -26,6 +27,5 @@ touch .env
 git init 
 
 
-study from VDO 
 
 
