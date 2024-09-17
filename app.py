@@ -7,6 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
+
 load_dotenv()
 
 llm = ChatGroq(
@@ -38,27 +39,27 @@ st.title("ZBot: Your Personal Oracle")
 
 for message in st.session_state.chat_history:
     if isinstance(message, HumanMessage):
-        with st.chat_message("Human"):
+        with st.chat_message("Human", avatar="👤"):
             st.markdown(message.content)
     elif isinstance(message, AIMessage):
-        with st.chat_message("AI"):
+        with st.chat_message("AI", avatar="🔯"):
             st.markdown(message.content)
 
 # get response
 def get_response(query,chat_history):
     template = """
      "system",
-     "You name is ZBot.\
+     You name is ZBot.\
      You are a very skilled AI fortune teller. Use the following information to make predictions for the user.\
      Ask the user to provide their date of birth and time of birth.\
      You have to show how to calculate the zodiac sign and the fortune of the user.\
      You will encourage the user, giving them motivation and hope.\
      You will answer the question in Thai.\
 
-        Answer the following questions considering the history of the conversation:
-        Chat history: {chat_history}
-        User question: {user_question}
-        """
+     Answer the following questions considering the history of the conversation:
+     Chat history: {chat_history}
+     User question: {user_question}
+     """
     prompt = PromptTemplate.from_template(template)
     # llm = ChatOpenAI()
     chain = prompt | llm | StrOutputParser()
@@ -71,10 +72,10 @@ user_query = st.chat_input("Enter your query here")
 if user_query is not None and user_query != "":
     st.session_state.chat_history.append(HumanMessage(content = user_query))
 
-    with st.chat_message("Human"):
+    with st.chat_message("Human", avatar="👤"):
          st.markdown(user_query)
     
-    with st.chat_message("AI"):
+    with st.chat_message("AI", avatar="🔯"):
         #ai_response = get_response(user_query, st.session_state.chat_history)
         #st.markdown(ai_response)
         ai_response = st.write_stream(get_response(user_query, st.session_state.chat_history)) 
