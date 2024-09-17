@@ -32,7 +32,7 @@ if "chat_history" not in st.session_state:
 
 
 st.set_page_config(page_title="Zbot Chat", page_icon="🔥")
-st.title("Zbot Chat")
+st.title("ZBot: Guiding Your Future with AI-Powered Insights")
 
 # coveration 
 
