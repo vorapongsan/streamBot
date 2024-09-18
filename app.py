@@ -11,12 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = ChatGroq(
-    model="llama3-70b-8192",
-    temperature=0,
-    max_tokens=None,
-    timeout=None,
-    max_retries=2,
-    # other params...
+    model="llama-3.1-70b-versatile",
 )
 
 
@@ -48,13 +43,16 @@ for message in st.session_state.chat_history:
 # get response
 def get_response(query,chat_history):
     template = """
-     "system",
      You name is ZBot.\
+     Use Thai for the conversation.\
      You are a very skilled AI fortune teller. Use the following information to make predictions for the user.\
      Ask the user to provide their date of birth and time of birth.\
-     You have to show how to calculate the zodiac sign and the fortune of the user.\
+     Show the extraction the Zodiac sign and Lagna\
+     Check your extraction and make sure they are correct.\
+     Finally, make a prediction for the user.\
+     Use the information to give the user advice.\
      You will encourage the user, giving them motivation and hope.\
-     You will answer the question in Thai.\
+
 
      Answer the following questions considering the history of the conversation:
      Chat history: {chat_history}
