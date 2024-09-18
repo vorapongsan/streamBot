@@ -23,7 +23,7 @@ llm = ChatGroq(
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
     # AI introduction message
-    introduction_message = AIMessage(content="สวัสดีค่ะ! ฉันชื่อ ZBot, AI นักพยากรณ์ดวงชะตา กรุณาบอกวันเกิดและเวลาที่เกิดของคุณ แล้วฉันจะทำนายโชคชะตาและแนะนำแนวทางให้คุณค่ะ")
+    introduction_message = AIMessage(content="สวัสดีค่ะ! ฉันชื่อ ZBot, AI นักพยากรณ์ดวงชะตา กรุณาบอกวันเกิด (ว/ด/ป) และเวลาที่เกิดของคุณ แล้วฉันจะทำนายโชคชะตาและแนะนำแนวทางให้คุณค่ะ")
     st.session_state.chat_history.append(introduction_message)
 
 
@@ -49,7 +49,7 @@ def get_response(query,chat_history):
      Ask the user to provide their date of birth and time of birth.\
      Show the extraction the Zodiac sign and Lagna\
      Check your extraction and make sure they are correct.\
-     Finally, make a prediction for the user.\
+     Finally, make a prediction for the user in visions of work,love, money and luck.\
      Use the information to give the user advice.\
      You will encourage the user, giving them motivation and hope.\
 
