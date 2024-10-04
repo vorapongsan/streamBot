@@ -15,10 +15,6 @@ llm = ChatGroq(
 )
 
 
-
-# if "chat_history" not in st.session_state:
-#     st.session_state.chat_history = []
-
 # Initialize chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -30,7 +26,7 @@ if "chat_history" not in st.session_state:
 st.set_page_config(page_title="Zbot Chat", page_icon="🔥")
 st.title("ZBot: Your Personal Oracle")
 
-# coveration 
+# conversation 
 
 for message in st.session_state.chat_history:
     if isinstance(message, HumanMessage):
